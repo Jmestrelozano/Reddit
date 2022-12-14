@@ -1,15 +1,28 @@
-import {View, Text, ScrollView, FlatList, Image} from 'react-native';
-import React, {useEffect} from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useAppDispatch, useAppSelector} from '../../../domain/store/store';
-import {AppStore} from '../../../domain/interfaces/global/global';
+import {
+  AppStore,
+  RootStackParamList,
+} from '../../../domain/interfaces/global/global';
 import {publicationService} from '../../../data/PublicationsServices/PublicationService';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-const PublicationScreen = ({route}: any) => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Publications'>;
+
+const PublicationScreen = ({route, navigation}: Props) => {
   const {name} = route;
   const publications = useAppSelector(
     (store: AppStore) => store.publications.newPublications,
@@ -18,7 +31,7 @@ const PublicationScreen = ({route}: any) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(publicationService(name));
+    //dispatch(publicationService(name));
   }, []);
 
   return (
@@ -29,7 +42,10 @@ const PublicationScreen = ({route}: any) => {
         alwaysBounceVertical
         renderItem={({item}) => {
           return (
-            <View
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('WebViewDetails', {url: item.url})
+              }
               style={{
                 marginBottom: 10,
                 backgroundColor: 'white',
@@ -40,9 +56,9 @@ const PublicationScreen = ({route}: any) => {
               }}>
               <View style={{flexDirection: 'column'}}>
                 <View>
-                  <Text>{item.author}</Text>
+                  <Text style={{color: 'black'}}>{item.author}</Text>
                 </View>
-                <Text>{item.title}</Text>
+                <Text style={{color: 'black'}}>{item.title}</Text>
                 <Image
                   resizeMode="stretch"
                   style={{width: '100%', height: 150, borderRadius: 5}}
@@ -56,11 +72,13 @@ const PublicationScreen = ({route}: any) => {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                   }}>
-                  <Text>{item.score} Score</Text>
-                  <Text>{item.numComments} Comments</Text>
+                  <Text style={{color: 'black'}}>{item.score} Score</Text>
+                  <Text style={{color: 'black'}}>
+                    {item.numComments} Comments
+                  </Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />

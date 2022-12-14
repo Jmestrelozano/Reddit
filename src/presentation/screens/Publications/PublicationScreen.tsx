@@ -19,6 +19,7 @@ import {
 } from '../../../domain/interfaces/global/global';
 import {publicationService} from '../../../data/PublicationsServices/PublicationService';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {CardPublication} from '../../components/cards/CardPublication';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Publications'>;
 
@@ -40,47 +41,9 @@ const PublicationScreen = ({route, navigation}: Props) => {
         data={publications}
         keyExtractor={(_, index) => `${index}`}
         alwaysBounceVertical
-        renderItem={({item}) => {
-          return (
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('WebViewDetails', {url: item.url})
-              }
-              style={{
-                marginBottom: 10,
-                backgroundColor: 'white',
-                elevation: 2,
-                borderRadius: 5,
-                paddingHorizontal: 10,
-                paddingVertical: 6,
-              }}>
-              <View style={{flexDirection: 'column'}}>
-                <View>
-                  <Text style={{color: 'black'}}>{item.author}</Text>
-                </View>
-                <Text style={{color: 'black'}}>{item.title}</Text>
-                <Image
-                  resizeMode="stretch"
-                  style={{width: '100%', height: 150, borderRadius: 5}}
-                  source={{uri: item.image}}
-                />
-
-                <View
-                  style={{
-                    marginVertical: 5,
-                    width: '60%',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <Text style={{color: 'black'}}>{item.score} Score</Text>
-                  <Text style={{color: 'black'}}>
-                    {item.numComments} Comments
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
+        renderItem={({item}) => (
+          <CardPublication navigation={navigation} item={item} />
+        )}
       />
     </SafeAreaView>
   );

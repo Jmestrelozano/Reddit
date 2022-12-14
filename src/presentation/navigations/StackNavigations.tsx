@@ -25,13 +25,7 @@ export const StackNavigations = () => {
           name="Publications"
           component={StackTabNavigation}
         />
-        <Stack.Screen
-          options={{
-            headerShown: true,
-          }}
-          name="WebViewDetails"
-          component={WebViewScreen}
-        />
+        <Stack.Screen name="WebViewDetails" component={WebViewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

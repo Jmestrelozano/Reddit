@@ -8,6 +8,6 @@ export const publicationService = createAsyncThunk(
     const response = await fetch(url);
     const result = await response.json();
 
-    return result.data;
+    return {data: result.data, type: name};
   },
 );

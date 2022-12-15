@@ -2,9 +2,7 @@ import {TypeStatus} from '../global/global';
 
 export interface StatePublicationsSlice {
   newPublications: Publication[];
-  hotPublications: Publication[];
-  popularPublications: Publication[];
-  topPublication: Publication[];
+  allPublications: {type: string; data: Publication[]}[];
   statusPublications: TypeStatus;
 }
 

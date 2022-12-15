@@ -1,12 +1,5 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  FlatList,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {FlatList} from 'react-native';
+import React, {useEffect} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -35,14 +28,11 @@ const PublicationScreen = ({route, navigation}: Props) => {
 
   useEffect(() => {
     const actionFetch = navigation.addListener('focus', () => {
-      console.log(name);
-      //dispatch(publicationService(name));
+      dispatch(publicationService(name));
     });
 
     return () => navigation.removeListener('beforeRemove', actionFetch);
-
-    //dispatch(publicationService(name));
-  }, []);
+  }, [name]);
 
   return (
     <SafeAreaView style={{flex: 1, marginHorizontal: wp(4), marginTop: hp(3)}}>

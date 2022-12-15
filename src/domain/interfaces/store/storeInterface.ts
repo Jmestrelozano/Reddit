@@ -6,4 +6,5 @@ export interface ReduxPersist {
   timeout: any;
   whitelist?: string[];
   blacklist?: string[];
+  transform?: any;
 }

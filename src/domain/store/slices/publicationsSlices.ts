@@ -4,37 +4,77 @@ import {createdAddaptedPublication} from '../../../adapters/createAddaptedPublic
 import {publicationService} from '../../../data/PublicationsServices/PublicationService';
 import {TypeStatus} from '../../interfaces/global/global';
 import {
-  Publication,
   RedditData,
   StatePublicationsSlice,
 } from '../../interfaces/slices/publicationsInterface';
 
 const initialState: StatePublicationsSlice = {
   newPublications: [],
-  hotPublications: [],
-  popularPublications: [],
-  topPublication: [],
+  allPublications: [
+    {
+      type: 'new',
+      data: [],
+    },
+    {
+      type: 'top',
+      data: [],
+    },
+    {
+      type: 'hot',
+      data: [],
+    },
+    {
+      type: 'controversial',
+      data: [],
+    },
+  ],
   statusPublications: TypeStatus.NONE,
 };
 export const publicationsSlice = createSlice({
   name: 'publications',
   initialState,
-  reducers: {},
+  reducers: {
+    setResetDataPublication: state => {
+      state.newPublications = [];
+    },
+    setLoading: (state, action: PayloadAction<TypeStatus>) => {
+      state.statusPublications = action.payload;
+    },
+    setDataPublication: (state, action: PayloadAction<string>) => {
+      state.statusPublications = TypeStatus.LOADING;
+
+      state.allPublications.map(p => {
+        if (p.type === action.payload.toLowerCase()) {
+          console.log(p.data);
+          state.newPublications = p.data;
+        }
+      });
+      state.statusPublications = TypeStatus.SUCCESS;
+    },
+  },
   extraReducers: builder => {
     builder.addCase(publicationService.pending, state => {
       state.statusPublications = TypeStatus.LOADING;
     });
     builder.addCase(
       publicationService.fulfilled,
-      (state, action: PayloadAction<RedditData>) => {
-        if (action.payload !== undefined) {
-          const publications = action.payload.children.map(child => child.data);
+      (state, action: PayloadAction<{data: RedditData; type: string}>) => {
+        if (action.payload.data !== undefined) {
+          const publications = action.payload.data.children.map(
+            child => child.data,
+          );
 
           const newPublications = publications.map(publication => {
             return createdAddaptedPublication(publication);
           });
 
           state.newPublications = newPublications;
+
+          state.allPublications.map(p => {
+            if (p.type === action.payload.type.toLowerCase()) {
+              p.data = newPublications;
+            }
+          });
           state.statusPublications = TypeStatus.SUCCESS;
         }
       },
@@ -44,3 +84,6 @@ export const publicationsSlice = createSlice({
     });
   },
 });
+
+export const {setDataPublication, setResetDataPublication, setLoading} =
+  publicationsSlice.actions;

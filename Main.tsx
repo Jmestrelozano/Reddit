@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {persistor, store} from './src/domain/store/store';
 import {PersistGate} from 'redux-persist/es/integration/react';

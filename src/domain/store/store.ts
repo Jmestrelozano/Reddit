@@ -26,14 +26,14 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 const rootPersistConfig: ReduxPersist = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: [''],
+  blacklist: ['publications'],
   timeout: null,
 };
 const redditPersistConfig: ReduxPersist = {
   key: 'reddit',
   storage: AsyncStorage,
   timeout: null,
-  whitelist: [''],
+  whitelist: ['allPublications'],
   blacklist: [''],
 };
 

@@ -223,7 +223,6 @@ android {
             keyAlias 'your_key_alias'
             keyPassword 'your_key_file_alias_password'
         }
-}
     }
     buildTypes {
         debug {

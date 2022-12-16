@@ -1,24 +1,3 @@
-// module.exports = {
-//   roots: ['<rootDir>/src'],
-//   collectCoverageFrom: [
-//     '<rootDir>/src/**/*.ts',
-//     '!<rootDir>/src/domain',
-//     '!<rootDir>/src/presentation/global',
-//     '!<rootDir>/src/assets',
-//     '!<rootDir>/src/styles',
-//     '!<rootDir>/src/framework/server/**',
-//     '!<rootDir>/src/**/*-ports.ts',
-//     '!**/ports/**',
-//     '!**/test/**',
-//     '!**/config/**',
-//   ],
-//   coverageDirectory: 'coverage',
-//   transform: {
-//     '.+\\.ts$': 'ts-jest',
-//   },
-//   setupFiles: ['dotenv/config'],
-// };
-
 module.exports = {
   preset: 'react-native',
   collectCoverageFrom: [

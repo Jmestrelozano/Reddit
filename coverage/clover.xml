@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671202001836" clover="3.2.0">
-  <project timestamp="1671202001837" name="All files">
-    <metrics statements="51" coveredstatements="39" conditionals="12" coveredconditionals="10" methods="16" coveredmethods="9" elements="79" coveredelements="58" complexity="0" loc="51" ncloc="51" packages="8" files="9" classes="9"/>
+<coverage generated="1671202045925" clover="3.2.0">
+  <project timestamp="1671202045926" name="All files">
+    <metrics statements="39" coveredstatements="39" conditionals="10" coveredconditionals="10" methods="9" coveredmethods="9" elements="58" coveredelements="58" complexity="0" loc="39" ncloc="39" packages="7" files="8" classes="8"/>
     <package name="adapters">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="createAddaptedPublication.ts" path="D:\Programacion\Proyecto React\Reddit\src\adapters\createAddaptedPublication.ts">
@@ -52,24 +52,6 @@
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="presentation.screens.publications">
-      <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="0"/>
-      <file name="PublicationScreen.tsx" path="D:\Programacion\Proyecto React\Reddit\src\presentation\screens\publications\PublicationScreen.tsx">
-        <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
       </file>
     </package>
     <package name="presentation.utils">

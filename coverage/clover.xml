@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1671173840724" clover="3.2.0">
+  <project timestamp="1671173840724" name="All files">
+    <metrics statements="39" coveredstatements="39" conditionals="10" coveredconditionals="10" methods="9" coveredmethods="9" elements="58" coveredelements="58" complexity="0" loc="39" ncloc="39" packages="7" files="8" classes="8"/>
+    <package name="adapters">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="createAddaptedPublication.ts" path="D:\Programacion\Proyecto React\Reddit\src\adapters\createAddaptedPublication.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.components.cards">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="CardPublication.tsx" path="D:\Programacion\Proyecto React\Reddit\src\presentation\components\cards\CardPublication.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.components.headers">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="HeaderMain.tsx" path="D:\Programacion\Proyecto React\Reddit\src\presentation\components\headers\HeaderMain.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.components.loaders">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loading.tsx" path="D:\Programacion\Proyecto React\Reddit\src\presentation\components\loaders\Loading.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.global">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="global.ts" path="D:\Programacion\Proyecto React\Reddit\src\presentation\global\global.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.screens.details">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="WebViewScreen.tsx" path="D:\Programacion\Proyecto React\Reddit\src\presentation\screens\details\WebViewScreen.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.utils">
+      <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <file name="convertFormatEpochToLocal.ts" path="D:\Programacion\Proyecto React\Reddit\src\presentation\utils\convertFormatEpochToLocal.ts">
+        <metrics statements="22" coveredstatements="22" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+      </file>
+      <file name="firstLetter.ts" path="D:\Programacion\Proyecto React\Reddit\src\presentation\utils\firstLetter.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

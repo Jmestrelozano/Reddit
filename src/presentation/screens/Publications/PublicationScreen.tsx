@@ -11,10 +11,10 @@ import {
   RootStackParamList,
   TypeStatus,
 } from '../../../domain/interfaces/global/global';
-import {publicationService} from '../../../data/PublicationsServices/PublicationService';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CardPublication} from '../../components/cards/CardPublication';
 import {Loading} from '../../components/loaders/Loading';
+import {thunkAsyncService} from '../../../data/PublicationsServices/thunkAsyncService';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Publications'>;
 
@@ -28,7 +28,7 @@ const PublicationScreen = ({route, navigation}: Props) => {
 
   useEffect(() => {
     const actionFetch = navigation.addListener('focus', () => {
-      dispatch(publicationService(name));
+      dispatch(thunkAsyncService(name));
     });
 
     return () => navigation.removeListener('beforeRemove', actionFetch);

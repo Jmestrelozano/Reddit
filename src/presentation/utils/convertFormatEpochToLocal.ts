@@ -1,4 +1,4 @@
-const timeSince = (date: Date) => {
+export const timeSince = (date: Date) => {
   let seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
   let interval = seconds / 31536000;
 
@@ -23,7 +23,6 @@ const timeSince = (date: Date) => {
   }
   return Math.floor(seconds) + ' seconds';
 };
-/* console.log(new Intl.DateTimeFormat('default',{ hour: "numeric", minute: 'numeric', second:'numeric',  hour12: true,} ).format(date)); */
 
 export const convertFormatEpochToLocal = (num: number) => {
   const date = new Date(num * 1000);

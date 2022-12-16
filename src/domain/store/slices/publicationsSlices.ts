@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Children} from 'react';
 import {createdAddaptedPublication} from '../../../adapters/createAddaptedPublication';
 import {publicationService} from '../../../data/PublicationsServices/PublicationService';
 import {TypeStatus} from '../../interfaces/global/global';
@@ -36,9 +35,6 @@ export const publicationsSlice = createSlice({
   reducers: {
     setResetDataPublication: state => {
       state.newPublications = [];
-    },
-    setLoading: (state, action: PayloadAction<TypeStatus>) => {
-      state.statusPublications = action.payload;
     },
     setDataPublication: (state, action: PayloadAction<string>) => {
       state.statusPublications = TypeStatus.LOADING;
@@ -85,5 +81,5 @@ export const publicationsSlice = createSlice({
   },
 });
 
-export const {setDataPublication, setResetDataPublication, setLoading} =
+export const {setDataPublication, setResetDataPublication} =
   publicationsSlice.actions;

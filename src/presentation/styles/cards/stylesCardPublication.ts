@@ -43,7 +43,6 @@ export const stylesCardPublication = StyleSheet.create({
   cardImage: {width: wp('88%'), height: hp(30), borderRadius: 5},
   cardFooter: {
     marginVertical: hp(0.8),
-    width: wp('40%'),
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

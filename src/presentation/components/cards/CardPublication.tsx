@@ -6,9 +6,12 @@ import {convertFormatEpochToLocal} from '../../utils/convertFormatEpochToLocal';
 import {firstLetter} from '../../utils/firstLetter';
 
 export const CardPublication = ({navigation, item}: PropsCardPublication) => {
+  const navigateWebView = () =>
+    navigation.navigate('WebViewDetails', {url: item.url});
+
   return (
     <Pressable
-      onPress={() => navigation.navigate('WebViewDetails', {url: item.url})}
+      onPress={navigateWebView}
       style={stylesCardPublication.container}>
       <View style={stylesCardPublication.card}>
         <View style={stylesCardPublication.cardHeader}>

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for presentation/screens/Publications/PublicationScreen.tsx</title>
+    <title>Code coverage report for presentation/screens/publications/PublicationScreen.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/screens/Publications</a> PublicationScreen.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/screens/publications</a> PublicationScreen.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -120,7 +120,8 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,7 +152,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,10 +165,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,11 +192,11 @@ import {
   RootStackParamList,
   TypeStatus,
 } from '../../../domain/interfaces/global/global';
-//import {publicationService} from '../../../data/PublicationsServices/PublicationService';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CardPublication} from '../../components/cards/CardPublication';
 import {Loading} from '../../components/loaders/Loading';
-import {setDataPublication} from '../../../domain/store/slices/publicationsSlices';
+import {thunkAsyncService} from '../../../data/PublicationsServices/thunkAsyncService';
+import {OfflineScreen} from '../offline/OfflineScreen';
 &nbsp;
 type Props = NativeStackScreenProps&lt;RootStackParamList, 'Publications'&gt;;
 &nbsp;
@@ -208,8 +210,7 @@ const PublicationScreen = <span class="cstat-no" title="statement not covered" >
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
     const actionFetch = <span class="cstat-no" title="statement not covered" >navigation.addListener('focus', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-      // dispatch(publicationService(name));
-<span class="cstat-no" title="statement not covered" >      dispatch(setDataPublication(name));</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(thunkAsyncService(name));</span>
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.removeListener('beforeRemove', actionFetch);</span></span>
@@ -220,14 +221,16 @@ const PublicationScreen = <span class="cstat-no" title="statement not covered" >
       {statusPublications === TypeStatus.LOADING ? (
         &lt;Loading /&gt;
       ) : (
-        &lt;FlatList
-          data={publications}
-          keyExtractor={<span class="fstat-no" title="function not covered" >(_</span>, index) =&gt; <span class="cstat-no" title="statement not covered" >`${index}`}</span>
-          alwaysBounceVertical
-          renderItem={<span class="fstat-no" title="function not covered" >({</span>item}) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;CardPublication navigation={navigation} item={item} /&gt;</span>
-          )}
-        /&gt;
+        &lt;OfflineScreen value={name}&gt;
+          &lt;FlatList
+            data={publications}
+            keyExtractor={<span class="fstat-no" title="function not covered" >(_</span>, index) =&gt; <span class="cstat-no" title="statement not covered" >`${index}`}</span>
+            alwaysBounceVertical
+            renderItem={<span class="fstat-no" title="function not covered" >({</span>item}) =&gt; (
+<span class="cstat-no" title="statement not covered" >              &lt;CardPublication navigation={navigation} item={item} /&gt;</span>
+            )}
+          /&gt;
+        &lt;/OfflineScreen&gt;
       )}
     &lt;/SafeAreaView&gt;
   );
@@ -241,7 +244,7 @@ export default PublicationScreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-16T06:56:45.489Z
+                at 2022-12-16T14:46:41.767Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

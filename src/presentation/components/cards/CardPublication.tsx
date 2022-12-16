@@ -1,7 +1,7 @@
 import {View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import {PropsCardPublication} from '../../../domain/interfaces/components/cards/cardPrublicationInterface';
-import {stylesCardPublication} from '../../styles/cards/stylesCardPublication';
+import {stylesCardPublication} from '../../styles/components/cards/stylesCardPublication';
 import {convertFormatEpochToLocal} from '../../utils/convertFormatEpochToLocal';
 import {firstLetter} from '../../utils/firstLetter';
 

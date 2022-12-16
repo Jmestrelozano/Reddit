@@ -15,6 +15,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CardPublication} from '../../components/cards/CardPublication';
 import {Loading} from '../../components/loaders/Loading';
 import {thunkAsyncService} from '../../../data/PublicationsServices/thunkAsyncService';
+import {OfflineScreen} from '../offline/OfflineScreen';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Publications'>;
 
@@ -39,14 +40,16 @@ const PublicationScreen = ({route, navigation}: Props) => {
       {statusPublications === TypeStatus.LOADING ? (
         <Loading />
       ) : (
-        <FlatList
-          data={publications}
-          keyExtractor={(_, index) => `${index}`}
-          alwaysBounceVertical
-          renderItem={({item}) => (
-            <CardPublication navigation={navigation} item={item} />
-          )}
-        />
+        <OfflineScreen value={name}>
+          <FlatList
+            data={publications}
+            keyExtractor={(_, index) => `${index}`}
+            alwaysBounceVertical
+            renderItem={({item}) => (
+              <CardPublication navigation={navigation} item={item} />
+            )}
+          />
+        </OfflineScreen>
       )}
     </SafeAreaView>
   );

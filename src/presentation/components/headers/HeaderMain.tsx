@@ -1,6 +1,6 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import {stylesHeaderMain} from '../../styles/headers/stylesHeaderMain';
+import {stylesHeaderMain} from '../../styles/components/headers/stylesHeaderMain';
 
 export const HeaderMain = () => {
   return (

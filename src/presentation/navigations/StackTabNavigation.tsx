@@ -1,7 +1,7 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {stylesStackTabView} from '../styles/navigations/stylesStackTabView';
-import PublicationScreen from '../screens/Publications/PublicationScreen';
+import PublicationScreen from '../screens/publications/PublicationScreen';
 import {RootStackTabParamList} from '../../domain/interfaces/global/global';
 
 const Tab: any = createMaterialTopTabNavigator<RootStackTabParamList>();

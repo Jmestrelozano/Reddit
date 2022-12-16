@@ -26,6 +26,7 @@ module.exports = {
     '!<rootDir>/src/domain/**/*.ts',
     '!<rootDir>/src/data/**/*.ts',
     '!<rootDir>/src/presentation/global/',
+    '!<rootDir>/src/presentation/screens/offline/OfflineScreen.tsx',
     '!<rootDir>/src/presentation/screens/Publications/PublicationScreen.tsx',
     '!<rootDir>/src/presentation/navigations/*',
     '!<rootDir>/src/presentation/assets/',

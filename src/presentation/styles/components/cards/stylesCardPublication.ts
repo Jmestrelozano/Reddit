@@ -4,7 +4,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {RFPercentage as size} from 'react-native-responsive-fontsize';
-import {colors} from '../../global/global';
+import {colors} from '../../../global/global';
 
 export const stylesCardPublication = StyleSheet.create({
   container: {
